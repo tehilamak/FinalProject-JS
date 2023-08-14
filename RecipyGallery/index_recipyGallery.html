@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recipy galery</title>
+    <link href="../HomePage/style_homepage.css" rel="stylesheet">
+        <link href="..\Bootstrap\Bootstrap\Content\bootstrap-icons\bootstrap-icons.css" rel="stylesheet" />
+</head>
+<body onload="cardOn()">
+<header id="headerGallery">
+    <a class="logo" href="../HomePage/index_homepage.html"><img src="../pic/home/לוגו.png" /></a> 
+    <div class="allheader">
+           <div class="menu">
+                <a> <div class="bi-justify-right"></div></a>
+                <a href="../HomePage/index_homepage.html">דף הבית</a>
+                <a href="../RecipyGallery/index_recipygallery.html" onclick="save_category('all')"> מתכונים</a>
+                <a href="../About/about.html">אודות</a>
+                <a href="#" id="helloG" >
+                    <div class="bi-person-fill"></div>
+                    <p id="helloGp">אורח</p>
+                </a>
+                <!-- <a href="#"><div class="bi-facebook"></div></a> -->
+            </div>
+    </div>
+    <div class="chotzetz"></div>
+</header>
+<main>
+  <section id="sectionGallery">
+  <div id="galeryAndFilter">
+      <div class="filterTwo">
+   <filter>
+           <p ><b>שף</b></p>
+    <input class="filtershef"  type="checkbox" onchange="filter_shef(event)" id="אפרת ליבפרוינד" >
+      <label for="efrat">אפרת ליבפרוינד</label>
+      </br>
+    <input class="filtershef"  type="checkbox" onchange="filter_shef(event)" id="מירי זורגר">
+     <label for="miri">מירי זורגר</label>
+     </br>
+    <input class="filtershef"  type="checkbox" onchange="filter_shef(event)" id="אביגיל מייזליק">
+    <label for="avigail">אביגיל מיזליק</label>
+    </br>
+    <input class="filtershef"  type="checkbox" onchange="filter_shef(event)" id="פרי פח">
+<label for="efrat4">פרי פח</label>
+</br>
+</br>
+</filter>
+<filter>
+  <p><b>דרגת קושי</b></p>
+
+    <input class="filterlevel"  type="checkbox" onchange="filter_shef(event)" id="קל" >
+  <label for="s">קל</label>
+  </br>
+    <input class="filterlevel"  type="checkbox" onchange="filter_shef(event)" id="בינוני">
+        <label for="m">בינוני</label>
+        </br>
+    <input class="filterlevel"  type="checkbox" onchange="filter_shef(event)" id="קשה">
+<label for="l">קשה</label>
+</br>
+</filter>
+<filter>
+           <p ><b>שף</b></p>
+    <input class="filtershef"  type="checkbox" onchange="filter_shef(event)" id="אפרת ליבפרוינד" >
+      <label for="efrat">אפרת ליבפרוינד</label>
+      </br>
+    <input class="filtershef"  type="checkbox" onchange="filter_shef(event)" id="מירי זורגר">
+     <label for="miri">מירי זורגר</label>
+     </br>
+    <input class="filtershef"  type="checkbox" onchange="filter_shef(event)" id="אביגיל מייזליק">
+    <label for="avigail">אביגיל מיזליק</label>
+    </br>
+    <input class="filtershef"  type="checkbox" onchange="filter_shef(event)" id="פרי פח">
+<label for="efrat4">פרי פח</label>
+</br>
+</br>
+</filter>
+</div>
+<div id="AllCards"></div>
+  </div>
+</section>
+ <footer>
+        <div id="connectionFooter">
+              <a><div class="bi-whatsapp"></div></a>
+               <a><div class="bi-instagram"></div></a>
+                 <a><div class="bi-youtube"></div></a>
+             <a><div class="bi-twitter"></div></a>
+              <a><div class="bi-facebook"></div></a>
+        </div>
+        <div id="allFooter">
+</div>
+    </footer>
+</main>
+    <script src="../RecipyGallery/app_recipyGallery.js"></script>
+</body>
+</html>

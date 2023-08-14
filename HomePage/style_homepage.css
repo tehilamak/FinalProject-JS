@@ -1,0 +1,789 @@
+
+/*הגדרות כלליות*/
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  direction: rtl;
+  background-color: black;
+  font-family: Assistant;
+}
+
+:root {
+  --hight-header:15%;
+  --hight-foter: 20%;
+}
+
+header {
+      height: 20vh;    
+  background-color:black;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+   overflow:hidden; 
+}
+main{
+  width: 100%;
+  height: 80vh;
+  overflow: auto;
+}
+footer {
+   height: 40%; 
+  width:100%;
+  display: flex;
+  align-items: center;
+  background-color: #e7932f;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.slogen {
+  color: #e7932f;
+  font-size: 150%;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  flex-wrap: wrap;
+  /* height:150%;   */
+}
+   ::-webkit-scrollbar{
+  display:none;
+}   
+
+
+/*קו מפריד עליון
+*/.chotzetz {
+  width: 100%;
+  height: 2px;
+  justify-content: center;
+  background-color:#829835;
+}
+/*הגדרות ללוגו*/
+  header > .logo > img {
+      width: 100%;
+      /* position: absolute; */
+      
+  }
+    .logo{
+       width: 15%;
+       position: absolute;
+      top: -3.5%;
+      right: 0.3%;
+    }
+
+
+/*הגדרות לניווט עליון*/
+
+.allheader{
+  width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 40%;
+}
+.allikons{
+  width: 40%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+.menu {
+  display:flex;
+  flex-direction: row;
+ margin-right: 15%;
+  color: #dbc796;
+  align-items: flex-end;
+  width: 60%;
+}
+
+  .menu > a {
+      color: #e7932f;
+      text-decoration: none;
+      font-size: 30px;
+      margin: 20px;
+      margin-bottom: 0px;
+  }
+.icon {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  margin-left: 10%;
+  font-size: 50px;
+  direction:ltr;
+  margin-top: 0%;
+}
+
+  .icon > a {
+      margin: 2%;
+  }
+
+/*    הגדרות לאיקונים*/    
+.icon > a > div {
+      color: #e7932f;
+      font-size: 50%;
+      width: 100%;
+      display: flex;
+      direction: ltr;
+      margin-inline-start: 2%;
+  }
+
+.alllog a{
+  margin: 3px;
+  color: #e7932f;
+  font-size: 20px;
+  text-decoration: none;
+}
+/*    במעבר על הקישורים משתנה צבע'
+*/        .menu > a:hover {
+          color: #829835;
+      }
+.icon > a >div:hover {
+  color:#ffffff ;/*#829835;*/
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 50%; /* Full width */
+  height: 500%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5px auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  /* Position it in the top right corner outside of the modal */
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+  /* Close button on hover */
+  .close:hover,
+  .close:focus {
+      color: #829835;
+      cursor: pointer;
+  }
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+      -webkit-transform: scale(0)
+  }
+
+  to {
+      -webkit-transform: scale(1)
+  }
+}
+
+@keyframes animatezoom {
+  from {
+      transform: scale(0)
+  }
+
+  to {
+      transform: scale(1)
+  }
+}
+
+
+
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password],input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+  /* Add a hover effect for buttons */
+  .log:hover {
+      /* opacity: 0.8; */
+      color: #829835;
+  }
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #829835;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 30%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+      display: block;
+      float: none;
+  }
+
+  .cancelbtn {
+      width: 100%;
+  }
+}
+
+#imgpage{
+  display: flex ;
+   width: 100%;
+  height: 15%;
+  margin-top: 5%;
+ margin-bottom: 5%;
+}
+#open img{
+  width: 100%;
+  height: 30%;
+}
+
+.melel {
+  width: 300px;
+  height: 400px;
+  color: #e7932f;
+  background-color: #000000;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-inline-start: 100px;
+}
+
+#open {
+  background-repeat: no-repeat;
+  background-size: cover; 
+  width:100%;
+  height: 120%;
+  opacity: 0.8;
+  background-image: url(../pic/home/RHMM_5282_1646811209386.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+/* .wrap-kituv {
+  margin-top: 0%;
+  width: 95%;
+  height: 30%;
+  background-color: #e7932f;
+  color: black;
+  opacity: 0.8;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.kituv {
+  font-size: 200%;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+
+}
+
+  .kituv > b > a {
+      color:black;
+      text-decoration: none;
+      margin-right: 5%;
+      animation-name: color;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      transition:2s;
+  } */
+    #sectionGallery{
+      /* height: 80%;
+      width: 100%; */
+    }
+#rowtonivot{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%;
+  align-items: center;
+}
+#rowtonivot a{
+  display: inline-block;
+  text-decoration: none;
+  color:black;
+  font-size: 200%;
+}
+#line{
+ border: 1px solid black;
+ width: 5%;
+}
+#allKategoryawrite{
+ width: 100%;
+    height: 50%;
+      /* border-top: 1px solid #829835; */
+      margin-top: 5%;
+      background-image: url(../pic/home/2.jpg);
+       border-bottom: 2px solid#e7932f;
+}
+
+#allKategoryawrite #write{
+   background-color: #0c0d0a;
+   width: 100%;
+    height: 50%;
+    opacity: 0.7;
+     display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+}
+
+#allKategoryawrite p{
+font-size: 200%;
+color:  white;
+}
+#allKategoryawrite p:hover{
+  color: green;
+}
+#homegallery{
+  display: flex;
+  width: 100%;
+  height: 90%;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+#homegallery a{
+ height:15%;
+ width: 20%;
+margin: 0.5%;
+align-items:center;
+}
+#homegallery a img{
+ height: 100%;
+ width: 100%;
+}
+#homegallery a:hover{
+  /* height: 100%; */
+  border-bottom: white 1px solid;
+}
+#galeryAndFilter{
+  width: 100%;
+  display: flex;
+}
+#AllCards{
+ width: 90%;
+ height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.filterTwo{
+  margin-top: 5%;
+  margin-right: 2%;
+  border-top: solid 1px black;
+ width: 10% ;
+ display: flex;
+ flex-direction: column;
+}
+.filterTwo input{
+  margin-right: 7%;
+  margin-top: 2%;
+}
+.filterTwo p{
+  margin-right: 3%;
+  font-size: 20px;
+}
+.card{
+  margin: 1%;
+ width: 30%;
+ height: 10%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.pAndLike{
+width: 100%;
+height: 10%;
+background-color:black;
+display: flex;
+align-items: center;
+border-radius: 5px;
+}
+.card a{
+width: 100%;
+height: 90%;
+}
+.card img{
+   width: 100%;
+  height: 100%; 
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+.card p{
+  color: oldlace;
+  width: 80%;
+  height: 100%;
+  font-size: 100%;
+  margin-right: 6%;
+}
+.bi-heart {
+  width: 20%;
+  color: white;
+  height: 100%;
+  margin-left: 6%;
+  direction: ltr;
+}
+ .bi-heart-fill{
+width: 20%;
+  color: white;
+  height: 100%;
+  margin-left: 6%;
+  direction: ltr;
+} 
+#search{
+   /* display: flex;  */
+  align-items: center;
+   /* flex-direction: column;  */
+}
+#result{
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}
+#SearchCards{
+  display: flex;
+  overflow: auto;
+}
+#whatHome{
+  width: 20%;
+  display:flex;
+  margin-right: 10%;
+  flex-direction: column;
+  height: 100%;
+}
+#whatHome a{
+    text-decoration: none;
+}
+  #whatHome p{
+    width: 100%;
+}
+#plusAndProduct{
+  width: 100%;
+  display: flex;
+}
+#HomeProduct{
+  width: 50%;
+  height: 100%;
+  margin: 0%;
+  background-color: #e7932f;
+  border: 1px solid black;
+}
+#plus{
+  width: 40%;
+  background-color: black;
+  height: 100%;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#e7932f ;
+}
+#hand{
+width: 20%;
+font-size: 30px;
+color: black;
+}
+.icon > a > div {
+      color: #e7932f;
+      font-size: 50%;
+      width: 100%;
+      display: flex;
+      direction: ltr;
+      margin-inline-start: 2%;
+  }
+  #searchicon{
+    width:10px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  background-color:black;
+  border:none;
+  color:white;
+  }
+  
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: black; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  box-shadow: black 50%;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/* #headerGallery{
+  width: 100%;
+  height: 30%;
+  display: flex;
+} */
+#love{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+#love div{
+  width:70%;
+  height: 30%;
+  /* border-top: solid white 1px; */
+   border-bottom: solid white 1px;
+  margin-bottom: 3px;
+}
+#love div a{
+  width: 85%;
+  height: 95%;
+}
+#love div a img{
+  width: 115%;
+  height: 100%;
+  align-items: center;
+}
+#love div p{
+  width: 100%;
+  height: 5%;
+  text-align: center;
+}
+#helloG{
+  width: 17%;
+  height: 90%;
+  /* background-color:#e7932f; */
+  background-color: white;
+  border-radius: 50px;
+  margin-right: 2%;
+  display: flex;
+  flex-direction: row;
+  border:solid 2px #e7932f;
+}
+
+#helloG:hover{
+ 
+  background-color: #e7932f;
+  border:solid 2px white;
+}
+#helloG div{
+  margin-right:10%;
+  margin-top: 3%;
+  color: black;
+}
+#helloG p{
+  margin-right:2%;
+  margin-top: 3%;
+  color: black;
+}
+  /* #headerGallery .menu {
+margin-top: 6%;
+}  
+#headerGallery #helloG {
+ margin-right: 30%;
+ /* height: 50%; */
+ /* margin-top: 0%;
+} */ 
+
+/* The Modal (background) */
+.modal-Home {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  bottom:-300px;
+ 
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  
+}
+
+/* Modal Content/Box */
+ .modal-content-Home {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+ }   
+
+/* Modal Content */
+.modal-content-Home {
+  position: relative;
+  background-color: #6b7741;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatebottom;
+  animation-duration: 0.8s;
+  display: flex;
+}
+/* The Close Button */
+.close-Home {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-Home:hover,
+.close-Home:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes animatebottom {
+  from {bottom: -400px; opacity: 0}
+  to {bottom: -150px; opacity: 1}
+}
+#createHome{
+ display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+#createHome div{
+  width: 30%;
+  height:7%;
+}
+
+ #allFooter{
+   width: 100%;
+   height: 70%;
+    display: flex; 
+ } 
+  #connectionFooter{
+    width: 100%;
+    height: 30%;
+     background-color: black;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+  }
+    #connectionFooter div{
+color: white;
+font-size: 280%;
+
+    }
+#connectionFooter a{
+  margin-left:1%;
+    }
+
+#connectionFooter a div:hover{
+color: #e7932f;
+    }
+
+    #buttonall{
+      width: 17%;
+      background-color: #829835;
+      border: 3px solid black;
+      height: 60px;
+      margin: 5%;
+      font-size:100%;
+    }
+     #buttonall:hover{
+      background-color: white;
+      border: 3px solid #829835;
+    }

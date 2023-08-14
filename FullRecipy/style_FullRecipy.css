@@ -1,0 +1,20 @@
+body{
+    direction: rtl;
+}
+.cardGallery{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: purple;
+}
+.FullDateilsStyle{
+     width: 500px;
+    height: 500px;
+    margin: 10px;
+    background-color: palevioletred;
+}
+#imgproduct{
+ width: 100px;
+    height: 100px;
+margin: 10px
+}

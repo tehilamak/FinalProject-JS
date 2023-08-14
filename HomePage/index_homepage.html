@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..\Bootstrap\Bootstrap\Content\bootstrap-icons\bootstrap-icons.css" rel="stylesheet" />
+    <link href="../HomePage/style_homepage.css" rel="stylesheet" />
+    <title>Home Page</title>
+</head>
+
+<body onload="guestname()">
+
+    <!-- //חלונית צדדית להצגת המועדפים -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="love"></div>
+    </div>
+
+
+    <header id="header">
+
+        <!-- //ניווט -->
+        <div class="icon">
+            <a>
+                <div class="bi-person-circle" onclick="join.style.display='block'"></div>
+            </a>
+            <a>
+                <div class="bi-heart" onclick="createlikes();openNav()"></div>
+            </a>
+            <a>
+                <div class="bi-search" onclick="if(searchicon.style.width=='10px')
+            {
+            searchicon.style.border='white solid 1px'; searchicon.style.width='20%'}
+            else{
+                searchicon.value='';
+            searchicon.style.width='10px'; searchicon.style.border='none'}"></div>
+            </a>
+            <input type="text" onchange="search_recipy(event)" id="searchicon">
+        </div>
+        <a class="logo" href="../HomePage/index_homepage.html"><img src="../pic/home/לוגו.png" /></a>
+
+        <div class="allheader">
+            <div class="menu">
+                <a>
+                    <div class="bi-justify-right"></div>
+                </a>
+                <a href="../HomePage/index_homepage.html">דף הבית</a>
+                <a href="../RecipyGallery/index_recipygallery.html" onclick="save_category('all')"> מתכונים</a>
+                <a href="../About/about.html">אודות</a>
+                <a href="#" id="helloG">
+                    <div class="bi-person-fill"></div>
+                    <p id="helloGp">אורח</p>
+                </a>
+            </div>
+            <div class="allikons">
+                <div class="alllog">
+                    <a href="#" onclick="document.getElementById('id01').style.display='block'" id="userinhtml" class="log">התחברות/</a>
+                    <a href="#" onclick="logout()" class="log">התנתקות</a>
+                </div>
+            </div>
+        </div>
+
+<!-- //טופס התחברות -->
+        <!-- The Modal -->
+        <div id="id01" class="modal">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+            <!-- Modal Content -->
+            <form class="modal-content animate" onsubmit="OKForm(event)">
+                <div class="imgcontainer">
+                    <img src="../pic/home/pepole.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required id="nameinlog">
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button type="submit">Login</button>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#" onclick="findClue()" >password?</a></span>
+                </div>
+            </form>
+        </div>
+
+
+        <!-- //הרשמה טופס -->
+        <!-- The Modal -->
+        <div id="join" class="modal">
+            <span onclick="join.style.display='none'" class="close" title="Close Modal">&times;</span>
+
+            <!-- Modal Content -->
+            <form class="modal-content animate" onsubmit="OkJoin(event)">
+                <div class="container">
+                    <label for="uname"><b>שם משתמש</b></label>
+                    <input type="text" placeholder="הכנס שם משתמש" name="uname" onkeypress="checkCapitals(event)" required>
+
+                    <label for="psw"><b>סיסמא</b></label>
+                    <input type="password" placeholder="סיסמא חיבת לכלול 8 תווים הכוללים לפחות ספרה ואות" name="psw" required onchange="checkpass(event)">
+
+                    <label for="psw2"><b>הכנס סיסמא שוב</b></label>
+                    <input type="password" placeholder="סיסמא חיבת לכלול 8 תווים הכוללים לפחות ספרה ואות" name="psw2" required onchange="checkpassAgain(event)"
+                        id="psw2">
+
+                    <label for="clue"><b>רמז לסיסמא</b></label>
+                    <input type="text" placeholder="הכנס רמז לסיסמא" name="clue" required>
+
+                    <label for="email"><b>הכנס כתובת איימיל</b></label>
+                    <input type="email" placeholder="הכנס כתובת איימיל" name="email" required>
+
+                    <button type="submit">join</button>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('join').style.display='none'" class="cancelbtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="chotzetz"></div>
+    </header>
+
+
+    <main>
+        <!-- //תוצאות החיפוש -->
+        <div id="search">
+            <div id="result"></div>
+            <div id="SearchCards"></div>
+        </div>
+
+        <div id="open"> </div>
+
+        <section>
+            <!-- //ניווט כל הקטגוריות -->
+            <div id="allKategoryawrite">
+                <div id="write">
+                    <p>כל הגלריות של</p>
+                    <img src="../pic/home/לוגו.png">
+                </div>
+            </div>
+            <div id="rowtonivot">
+                <div id="line"></div>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('all')">
+                כל הקטגוריות
+            </a>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('meet_chicken')">
+           עוף ובשר
+            </a>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('bread')">
+               לחמים
+            </a>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('salat')">
+               סלטים
+            </a>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('fish')">
+                 דגים
+            </a>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('addition')">
+                תוספות
+           </a>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('soups')">
+           מרקים
+       </a>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('pie')">
+        פשטידות
+   </a>
+                <div id="line"></div>
+            </div>
+
+            <div id="homegallery">
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('meet_chicken')">
+            <img src="../pic/עוף.png">
+        </a>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('bread')">
+            <img src="../pic/לחמים.png">
+        </a>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('salat')">
+            <img src="../pic/סלטים.png">
+        </a>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('fish')">
+            <img src="../pic/fish/מתכוני דגים.jpg">
+        </a>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('addition')">
+            <img src="../pic/תוספות.png">
+        </a>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('soups')">
+            <img src="../pic/מרקים.png">
+        </a>
+                <a href="../RecipyGallery/index_recipyGallery.html" onclick="save_category('pie')">
+            <img src="../pic/פשטידות.png">
+        </a>
+            </div>
+             <input type="button" onclick="save_category('all');location.replace('../RecipyGallery/index_recipyGallery.html')" value="לכל המתכונים" id="buttonall"> 
+        </section>
+
+
+        <footer>
+            <div id="connectionFooter">
+                <a>
+                    <div class="bi-whatsapp"></div>
+                </a>
+                <a>
+                    <div class="bi-instagram"></div>
+                </a>
+                <a>
+                    <div class="bi-youtube"></div>
+                </a>
+                <a>
+                    <div class="bi-twitter"></div>
+                </a>
+                <a>
+                    <div class="bi-facebook"></div>
+                </a>
+            </div>
+            <div id="allFooter">
+
+                <!-- //חיפוש לפי מוצרים שבבית -->
+                <div id="whatHome">
+                    <p>רוצים לבשל רק מהמוצרים שבמזוה הקליקו כאן מוצרים זמינים למתכון שלכם>>></p>
+                    <div id="plusAndProduct">
+                        <input type="text" id="HomeProduct">
+                        <a href="#">
+                            <div class="bi-plus" id="plus" onclick="HomeProductArr()"></div>
+                        </a>
+                        <a href="#">
+                            <div class="bi-hand-index" onclick="HomeProductFunc(); btn()" id="hand"></div>
+                        </a>
+                    </div>
+                </div>
+
+                <ul>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                </ul>
+                <ul>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                </ul>
+                <ul>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                    <li><a>מתכונים</a></li>
+                </ul>
+                <!-- //חלונית שמציגה את המתכונים שנמצאו מחיפוש מה יש לי בבית -->
+                <div id="myHomeModal" class="modal-Home">
+
+                    <!-- Modal content -->
+                    <div class="modal-content-Home">
+                        <span class="close-Home">&times;</span>
+                        <div id="createHome"></div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        </div>
+    </main>
+    <script src="../HomePage/app_homepage.js"></script>
+</body>
+</html>
